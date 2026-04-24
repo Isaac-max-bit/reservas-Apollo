@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apollo | Reserva Directa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container">
+            <h1 class="brand">APOLLO</h1>
+            <p class="tagline">Selecciona tu ubicación preferida</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="step-1" class="booking-card">
+            <div class="card-header">
+                <h2>1. Mesas Disponibles</h2>
+                <p>Haz clic en la mesa que prefieras para continuar</p>
+            </div>
+            
+            <div id="floor-plan" class="floor-plan">
+                </div>
+        </section>
+
+        <section id="step-2" class="booking-card hidden fade-in">
+            <div class="card-header">
+                <h2>2. Detalles de la Reserva</h2>
+                <p id="selected-info" class="highlight"></p>
+            </div>
+
+            <form id="booking-form">
+                <input type="hidden" id="table-id-input">
+                <div class="form-grid">
+                    <div class="field">
+                        <label>Tu Nombre</label>
+                        <input type="text" id="user-name" required placeholder="Nombre completo">
+                    </div>
+                    <div class="field">
+                        <label>Fecha de visita</label>
+                        <input type="date" id="res-date" required>
+                    </div>
+                </div>
+                <div class="actions">
+                    <button type="button" class="btn-outline" onclick="ApolloApp.reset()">Cambiar mesa</button>
+                    <button type="submit" class="btn-gold">Finalizar Reserva</button>
+                </div>
+            </form>
+        </section>
+
+        <div id="success-msg" class="booking-card hidden text-center"></div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
