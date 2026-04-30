@@ -1,120 +1,121 @@
 :root {
-    --gold: #d4af37;
-    --dark: #0a0a0b;
-    --grey: #1a1a1c;
-    --text: #ffffff;
-    --transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    --oro: #c5a059;
+    --oscuro: #121212;
+    --texto: #ffffff;
+    --gris: #2a2a2a;
 }
 
 body {
-    background: var(--dark);
-    color: var(--text);
-    font-family: 'Segoe UI', sans-serif;
     margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url('https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&q=80') center/cover;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    color: var(--texto);
 }
 
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-.navbar {
-    text-align: center;
-    padding: 40px 0;
-    border-bottom: 1px solid #222;
-}
-
-.brand {
-    letter-spacing: 10px;
-    color: var(--gold);
-    margin: 0;
-}
-
-.booking-card {
-    background: var(--grey);
-    padding: 30px;
+.glass-container {
+    background: rgba(20, 20, 20, 0.85);
+    backdrop-filter: blur(10px);
+    padding: 40px;
     border-radius: 20px;
-    margin-top: 20px;
-    border: 1px solid #333;
+    border: 1px solid rgba(197, 160, 89, 0.3);
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    text-align: center;
 }
 
-/* Grid de Mesas */
-.floor-plan {
+.logo {
+    font-size: 2.5rem;
+    letter-spacing: 8px;
+    color: var(--oro);
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    font-size: 0.9rem;
+    color: #bbb;
+    margin-bottom: 30px;
+}
+
+.input-group {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.row {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    grid-template-columns: 1fr 1fr;
     gap: 15px;
 }
 
-.table-card {
-    background: #252528;
-    padding: 20px;
-    border-radius: 12px;
-    text-align: center;
-    cursor: pointer;
-    border: 2px solid transparent;
-    transition: var(--transition);
-}
-
-.table-card:hover {
-    border-color: var(--gold);
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-}
-
-.table-card strong {
+label {
     display: block;
-    font-size: 1.2rem;
-    color: var(--gold);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    color: var(--oro);
 }
 
-/* Utilidades */
+input {
+    width: 100%;
+    background: var(--gris);
+    border: 1px solid #444;
+    padding: 12px;
+    border-radius: 8px;
+    color: white;
+    box-sizing: border-box;
+    transition: 0.3s;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--oro);
+    box-shadow: 0 0 8px rgba(197, 160, 89, 0.2);
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    background: var(--oro);
+    border: none;
+    border-radius: 8px;
+    color: var(--oscuro);
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+button:hover {
+    background: #d6b36e;
+    transform: translateY(-2px);
+}
+
+/* Clases de utilidad */
 .hidden {
     display: none;
 }
 
-.fade-in {
-    animation: fadeIn 0.6s forwards;
+#mensaje-confirmacion h3 {
+    color: var(--oro);
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.success-icon {
+    font-size: 50px;
+    color: #4CAF50;
+    margin-bottom: 15px;
 }
 
-.highlight {
-    color: var(--gold);
-    font-weight: bold;
-    margin-bottom: 20px;
-}
-
-.btn-gold {
-    background: var(--gold);
-    color: var(--dark);
-    border: none;
-    padding: 12px 25px;
-    border-radius: 8px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.btn-outline {
+.btn-secundario {
     background: transparent;
-    border: 1px solid #555;
-    color: #ccc;
-    padding: 12px 25px;
-    border-radius: 8px;
-    cursor: pointer;
-    margin-right: 10px;
-}
-
-.text-center {
-    text-align: center;
+    border: 1px solid var(--oro);
+    color: var(--oro);
+    margin-top: 20px;
 }
